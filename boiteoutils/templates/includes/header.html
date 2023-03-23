@@ -12,6 +12,10 @@
           aria-current="page">Home</a>
         </li>
 
+        <li class="nav-item">
+            <a class="nav-link" href='/'>HOME</a>
+        </li>
+
 
         <li class="nav-item"><a href="{{url_about}}" 
           class="nav-link {% if request.path == url_about %}active{% endif %}">About</a>
@@ -19,7 +23,7 @@
 
         {% if user.is_authenticated %}
         <span class="nav-bar-text">Logged as : {{user.get_username}}</span>
-        <a class="btn btn-sm btn-outline-secondary" href="{% url 'logout' %}?next={{request.path}}">log out</a>
+        <a class="btn btn-sm btn-outline-secondary" href="{% url 'logout' %}?next={{url_about}}">log out</a>
         {% else %}
         <span class="nav-bar-text">You are not logged in</span>
         <a class="btn btn-sm btn-outline-secondary" href="{% url 'login' %}">login</a>

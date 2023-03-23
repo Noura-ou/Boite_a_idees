@@ -8,8 +8,8 @@ app_name = "main"
 
 
 urlpatterns = [
-    path('hello/',views.hello),
-    path('',views.acceuil),
+    path('about/',views.hello, name = 'about'),
+    path('',views.acceuil, name = 'home'),
     path('signup/', views.SignupPage.as_view(), name='signup'),
     
 ]

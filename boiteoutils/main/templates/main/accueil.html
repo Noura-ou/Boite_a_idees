@@ -1,6 +1,8 @@
-Voici la boite à idées
+{% extends 'base.html' %}
 
 
+{% block content %}
+<h2>Voici la boite à idées</h2>
 
 <ul>
     {% for idee in liste_idees %}
@@ -8,3 +10,6 @@ Voici la boite à idées
     {% endfor %}
 
 </ul>
+{% endblock content %}
+
+
