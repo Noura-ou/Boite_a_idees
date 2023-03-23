@@ -2,8 +2,6 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-
-
 COPY  requirements.txt /app
 
 RUN python -m venv /opt/venv
