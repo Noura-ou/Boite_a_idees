@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Idee
 
 # Create your views here.
 def hello(request):
@@ -7,4 +8,6 @@ def hello(request):
 
 def acceuil(request):
 
-    pass
+    idees = Idee.objects.all() #recuperer tt les ideesd e ma BDD
+
+    return render(request,'accueil.html', {'liste_idees': idees})

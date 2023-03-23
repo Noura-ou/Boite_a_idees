@@ -1,0 +1,10 @@
+Voici la boite à idées
+
+
+
+<ul>
+    {% for idee in liste_idees %}
+         <li> {{ idee.auteur}} propose l'idée : {{ idee.formulation}} </li>
+    {% endfor %}
+
+</ul>
