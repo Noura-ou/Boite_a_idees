@@ -1,0 +1,4 @@
+django==4.1
+django-dotenv
+pudb
+django-widget-tweaks
