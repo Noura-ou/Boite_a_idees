@@ -17,9 +17,16 @@ from django.contrib import admin
 from django.urls import path
 from main import views
 
+
+
+from django.contrib import admin
+from django.urls import path, include
+from django.conf import settings
+
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/',views.hello),
-    path('',views.acceuil),
-
+    path('', include('main.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),   
 ]
