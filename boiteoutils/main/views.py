@@ -3,17 +3,22 @@ from .models import Idee
 from django.views.generic import CreateView
 from django.urls import reverse_lazy
 from .forms import UserCreationFormCustom
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-def hello(request):
-    return render(request, 'main/hello_world.html')
+def about(request):
+    return render(request, 'main/about.html')
 
+def home(request):
+    return render(request, 'main/home.html')
 
-def acceuil(request):
+   
+@login_required
+def page_idee(request):
 
     idees = Idee.objects.all() #recuperer tt les ideesd e ma BDD
 
-    return render(request,'main/accueil.html', {'liste_idees': idees})
+    return render(request,'main/page_idee.html', {'liste_idees': idees})
 
 
 class SignupPage(CreateView):

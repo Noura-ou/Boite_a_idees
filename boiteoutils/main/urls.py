@@ -5,11 +5,11 @@ app_name = "main"
 
 
 
-
-
 urlpatterns = [
-    path('about/',views.hello, name = 'about'),
-    path('',views.acceuil, name = 'home'),
+    path('about/',views.about, name = 'about'),
+    path('page_idee/',views.page_idee, name = 'page_idee'),
+    path('',views.home, name = 'home'),
     path('signup/', views.SignupPage.as_view(), name='signup'),
+
     
 ]

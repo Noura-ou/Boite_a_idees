@@ -1,29 +1,25 @@
 <div class="container">
     <header class="d-flex justify-content-center py-3">
-
-      {% url 'home' as url_home%}
-      {% url 'about' as url_about%}
       
-      
-      <ul class="nav nav-pills">
+        <ul class="nav nav-pills">
 
-        <li class="nav-item"><a href="{{url_home}}" 
-          class="nav-link {% if request.path == url_home %}active{% endif %}" 
+        <li class="nav-item"><a href='/'
+          class="nav-link {% if request.path == '/' %}active{% endif %}" 
           aria-current="page">Home</a>
         </li>
 
-        <li class="nav-item">
-            <a class="nav-link" href='/'>HOME</a>
+        <li class="nav-item"><a href="{% url 'main:about'%}"
+            class="nav-link {% if request.path == 'about/' %}active{% endif %}"  aria-current="page">About</a>
         </li>
 
-
-        <li class="nav-item"><a href="{{url_about}}" 
-          class="nav-link {% if request.path == url_about %}active{% endif %}">About</a>
+        <li class="nav-item"><a href="{% url 'main:page_idee'%}"
+            class="nav-link {% if request.path == 'page_idee/' %}active{% endif %}"  aria-current="page">Page Idées</a>
         </li>
+  
 
         {% if user.is_authenticated %}
-        <span class="nav-bar-text">Logged as : {{user.get_username}}</span>
-        <a class="btn btn-sm btn-outline-secondary" href="{% url 'logout' %}?next={{url_about}}">log out</a>
+            <span class="nav-bar-text">Logged as : {{user.get_username}}</span>
+             <a class="btn btn-sm btn-outline-secondary" href='/accounts/logout'>log out</a>
         {% else %}
         <span class="nav-bar-text">You are not logged in</span>
         <a class="btn btn-sm btn-outline-secondary" href="{% url 'login' %}">login</a>
