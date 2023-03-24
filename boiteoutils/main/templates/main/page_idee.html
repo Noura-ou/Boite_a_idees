@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
 
+{% block  content%}
 
-{% block content %}
-<h2>Voici la boite à idées</h2>
+<h1>Voici la boite à idées</h1>
+
 
 <ul>
-    {% for idee in liste_idees %}
-         <li> {{ idee.auteur}} propose l'idée : {{ idee.formulation}} </li>
+    {% for idee in liste_idee %}
+        <li>{{ idee.auteur }} propose l'idée: {{ idee.formulation }}</li>
     {% endfor %}
-
 </ul>
+
 {% endblock content %}
+
+
 
 

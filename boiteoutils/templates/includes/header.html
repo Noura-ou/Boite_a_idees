@@ -13,16 +13,21 @@
         </li>
 
         <li class="nav-item"><a href="{% url 'main:page_idee'%}"
-            class="nav-link {% if request.path == 'page_idee/' %}active{% endif %}"  aria-current="page">Page Idées</a>
+            class="nav-link {% if request.path == 'page_idee/' %}active{% endif %}"  aria-current="page">Voir les idées</a>
         </li>
+
+        <li class="nav-item"><a href="{% url 'main:creer_idee'%}"
+            class="nav-link {% if request.path == 'creer_idee/' %}active{% endif %}"  aria-current="page">Créer une idée</a>
+        </li>
+  
   
 
         {% if user.is_authenticated %}
             <span class="nav-bar-text">Logged as : {{user.get_username}}</span>
-             <a class="btn btn-sm btn-outline-secondary" href='/accounts/logout'>log out</a>
+             <a class="btn btn-sm btn-outline-secondary" href='/accounts/logout'>Se déconnecter</a>
         {% else %}
         <span class="nav-bar-text">You are not logged in</span>
-        <a class="btn btn-sm btn-outline-secondary" href="{% url 'login' %}">login</a>
+        <a class="btn btn-sm btn-outline-secondary" href="{% url 'login' %}">Se Connecter</a>
         {% endif %}
 
       </ul>

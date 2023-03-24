@@ -31,10 +31,12 @@ nav ul {
     list-style: none; 
     font-weight: bold;
 }
-#im1 {
-    width: 70%;
+#im2 {
+    width: 50%;
     object-fit: cover;
+    margin-left: 20px;
 }
+
 
 /* figure {
     width: 100%;

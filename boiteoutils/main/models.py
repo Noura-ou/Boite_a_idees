@@ -9,7 +9,7 @@ from django.contrib.auth.models import User
 class Idee(models.Model):
     formulation = models.CharField(max_length=100)
     detail = models.CharField(max_length=200, null=True)
-    auteur = models.ForeignKey(User, on_delete=models.CASCADE)
+   # auteur = models.ForeignKey(User, on_delete=models.CASCADE)
     
 
 class Votant(models.Model):
