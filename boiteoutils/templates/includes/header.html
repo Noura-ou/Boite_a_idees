@@ -12,12 +12,17 @@
             class="nav-link {% if request.path == 'about/' %}active{% endif %}"  aria-current="page">About</a>
         </li>
 
+        <li class="nav-item"><a href="{% url 'main:creer_idee'%}"
+            class="nav-link {% if request.path == 'creer_idee/' %}active{% endif %}"  aria-current="page">Créer une idée</a>
+        </li>
+  
+
         <li class="nav-item"><a href="{% url 'main:page_idee'%}"
             class="nav-link {% if request.path == 'page_idee/' %}active{% endif %}"  aria-current="page">Voir les idées</a>
         </li>
 
-        <li class="nav-item"><a href="{% url 'main:creer_idee'%}"
-            class="nav-link {% if request.path == 'creer_idee/' %}active{% endif %}"  aria-current="page">Créer une idée</a>
+        <li class="nav-item"><a href="{% url 'main:signup'%}"
+            class="nav-link {% if request.path == 'signup/' %}active{% endif %}"  aria-current="page">Sign up</a>
         </li>
   
   

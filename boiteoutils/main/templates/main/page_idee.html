@@ -3,13 +3,15 @@
 {% block  content%}
 
 <h1>Voici la boite à idées</h1>
-
-
-<ul>
-    {% for idee in liste_idee %}
-        <li>{{ idee.auteur }} propose l'idée: {{ idee.formulation }}</li>
+    
+    {% for idee in liste_idees %}
+       
+    <li>{{ idee.formulation }} - {{ idee.detail }}</li>
+ 
+    {% empty %}
+        <p>No ideas yet.</p>
     {% endfor %}
-</ul>
+
 
 {% endblock content %}
 
